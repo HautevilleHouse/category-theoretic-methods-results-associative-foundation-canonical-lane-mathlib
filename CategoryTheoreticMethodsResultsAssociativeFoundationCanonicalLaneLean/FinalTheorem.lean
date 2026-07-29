@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CategoryTheoreticMethodsResultsAssociativeFoundationCanonicalLaneLean.UniversalConstructions
+import HautevilleHouse.CategoryTheoreticMethodsResultsAssociativeFoundationCanonicalLaneLean.AdjointFunctors
+import HautevilleHouse.CategoryTheoreticMethodsResultsAssociativeFoundationCanonicalLaneLean.LimitsAndColimits
+import HautevilleHouse.CategoryTheoreticMethodsResultsAssociativeFoundationCanonicalLaneLean.YonedaLemma
+
+namespace HautevilleHouse
+namespace CategoryTheoreticMethodsResultsAssociativeFoundationCanonicalLaneLean
+
+def CategoryTheoreticMethodsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem category_theoretic_methods_endgame (A : AdmissibleClass) :
+    CategoryTheoreticMethodsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CategoryTheoreticMethodsResultsAssociativeFoundationCanonicalLaneLean
+end HautevilleHouse
